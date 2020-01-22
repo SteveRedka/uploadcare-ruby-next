@@ -10,6 +10,14 @@ module Uploadcare
     include ThrottleHandler
     upload_api
 
+    def upload(object, store: false)
+      if file?(object)           then upload_many([object], store: store)
+      elsif object.is_a?(Array)  then upload_many(object, store: store)
+      else
+        raise ArgumentError, "Expected input to be a file/Array/URL, given: `#{object}`"
+      end
+    end
+
     # https://uploadcare.com/api-refs/upload-api/#operation/baseUpload
 
     def upload_many(arr, **options)
@@ -85,6 +93,10 @@ module Uploadcare
         'UPLOADCARE_PUB_KEY': PUBLIC_KEY,
         'UPLOADCARE_STORE': store
       }
+    end
+
+    def file?(object)
+      object.respond_to?(:path) && ::File.exist?(object.path)
     end
 
     def file?(object)
