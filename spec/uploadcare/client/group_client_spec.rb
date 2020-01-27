@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 module Uploadcare
@@ -14,7 +16,7 @@ module Uploadcare
           %i[id datetime_created datetime_stored files_count cdn_url url files].each do |key|
             expect(response_body).to have_key key
           end
-          expect(response_body[:url]).to include ('https://api.uploadcare.com/groups')
+          expect(response_body[:url]).to include 'https://api.uploadcare.com/groups'
         end
       end
     end
