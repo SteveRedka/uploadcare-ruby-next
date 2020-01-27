@@ -1,9 +1,8 @@
-# This file generates signatures for protected uploads
-# https://uploadcare.com/docs/api_reference/upload/signed_uploads/
-
 require 'digest'
 
 module Uploadcare
+  # This class generates signatures for protected uploads
+  # https://uploadcare.com/docs/api_reference/upload/signed_uploads/
   module Upload
     class SignatureGenerator
       def self.call
