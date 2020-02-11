@@ -4,7 +4,10 @@ require 'spec_helper'
 
 module Uploadcare
   RSpec.describe ProjectClient do
-    Uploadcare::PUBLIC_KEY = 'foo'
+    before do
+      Uploadcare::PUBLIC_KEY = 'c8499ee6dc44194c00d2'
+    end
+
     it 'requests info about target project' do
       VCR.use_cassette('project') do
         response = ProjectClient.new.show
