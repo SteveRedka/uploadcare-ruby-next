@@ -10,10 +10,10 @@ module Uploadcare
     # Create files group from a set of files by using their UUIDs.
     # https://uploadcare.com/api-refs/upload-api/#operation/createFilesGroup
 
-    def create(file_ids, **options)
+    def create(file_list, **options)
       body_hash = {
         pub_key: PUBLIC_KEY,
-      }.merge(file_params(file_ids), options)
+      }.merge(file_params(file_list), options)
       body = HTTP::FormData::Multipart.new(body_hash)
       post(path: 'group/',
            headers: { 'Content-type': body.content_type },
