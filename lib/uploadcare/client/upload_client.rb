@@ -7,7 +7,7 @@ module Uploadcare
     upload_api
 
     # https://uploadcare.com/api-refs/upload-api/#operation/baseUpload
-    
+
     def upload_many(arr, **options)
       body = HTTP::FormData::Multipart.new(
         upload_params(options[:store]).merge(files_formdata(arr))
@@ -19,10 +19,12 @@ module Uploadcare
 
     private
 
-    def upload_params(store = false)
+    def upload_params(store = 'auto')
+      store = '1' if store == true
+      store = '0' if store == false
       {
         'UPLOADCARE_PUB_KEY': PUBLIC_KEY,
-        'UPLOADCARE_STORE': (store == true) ? '1' : '0'
+        'UPLOADCARE_STORE': store
       }
     end
 
