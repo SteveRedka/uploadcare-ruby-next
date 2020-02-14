@@ -42,7 +42,9 @@ This file lists used endpoints and their defaults
 #### Client
 This folder contains services that interact with API endpoints
 #### Entity
-This folder contains representations of entities existing in API
+This folder contains serializers of API responses
+#### Resource
+This folder contains representations of objects in Uploadcare cloud
 #### Headers
 This folder contains anything related to unusual headers
 #### Service
