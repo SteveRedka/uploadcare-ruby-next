@@ -24,7 +24,7 @@ module Uploadcare
           stub_const('PUBLIC_KEY', 'baz')
           begin
             Uploader.upload(file)
-          rescue => err
+          rescue StandardError => err
             expect(err.to_s).to include('UPLOADCARE_PUB_KEY is invalid')
           end
         end

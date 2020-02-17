@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 module Uploadcare
@@ -11,7 +13,7 @@ module Uploadcare
 
       it 'returns correct headers for complex authentication' do
         headers = Uploadcare::SecureAuthHeader.call(method: 'POST',
-          uri: '/path', content_type: 'application/x-www-form-urlencoded')
+                                                    uri: '/path', content_type: 'application/x-www-form-urlencoded')
         expected = '47af79c7f800de03b9e0f2dbb1e589cba7b210c2'
         expect(headers[:Authorization]).to eq "Uploadcare pub:#{expected}"
       end
