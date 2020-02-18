@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'uploadcare/ruby/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'uploadcare-ruby-next'
+  spec.name          = 'uploadcare-ruby'
   spec.version       = Uploadcare::VERSION
   spec.authors       = ['Stepan Redka']
   spec.email         = ['stepan.redka@railsmuffin.com']

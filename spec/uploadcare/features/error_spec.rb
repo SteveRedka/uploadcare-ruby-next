@@ -11,7 +11,7 @@ module Uploadcare
       it 'raises a readable error on failed requests' do
         VCR.use_cassette('rest_file_info_fail') do
           uuid = 'nonexistent'
-          expect { File.info(uuid) }.to raise_error(RequestError, 'Not found.')
+          expect { Entity::File.info(uuid) }.to raise_error(RequestError, 'Not found.')
         end
       end
     end
@@ -23,7 +23,7 @@ module Uploadcare
         VCR.use_cassette('upload_error') do
           stub_const('PUBLIC_KEY', 'baz')
           begin
-            Uploader.upload(file)
+            Entity::Uploader.upload(file)
           rescue StandardError => err
             expect(err.to_s).to include('UPLOADCARE_PUB_KEY is invalid')
           end
