@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'uploadcare/ruby/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'uploadcare-ruby'
+  spec.name          = 'uploadcare-ruby-next'
   spec.version       = Uploadcare::VERSION
   spec.authors       = ['Stepan Redka']
   spec.email         = ['stepan.redka@railsmuffin.com']
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
     spec.metadata['homepage_uri'] = spec.homepage
     spec.metadata['source_code_uri'] = 'https://github.com/uploadcare/uploadcare-ruby-next'
