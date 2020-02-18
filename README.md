@@ -40,11 +40,13 @@ Project uses [ApiStruct](https://github.com/rubygarage/api_struct) architecture.
 #### uploadcare_settings.rb
 This file lists used endpoints and their defaults
 #### Client
-This folder contains services that interact with API endpoints
+This layer contains services that interact with API endpoints, and handles different specifics of talking to different APIs (such as: different headers, encryptions, params, etc..)
 #### Entity
-This folder contains representations of entities existing in API
-#### Headers
+This layer contains serializers of API endpoints
+#### Header
 This folder contains anything related to unusual headers
+#### Resource
+This folder contains objects representing objects as they exist in Uploadcare cloud; think ActiveRecord model
 #### Service
 Objects that don't fit any pattern
 
