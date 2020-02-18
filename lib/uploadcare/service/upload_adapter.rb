@@ -41,12 +41,23 @@ module Uploadcare
       Entity::File.new(response.success)
     end
 
+    def self.upload_from_url(object, **options)
+      response = UploadClient.new.upload_from_url(object, **options)
+      handle_upload_errors(response)
+      Entity::Uploader.new(response.success)
+    end
+
     def self.file?(object)
       object.respond_to?(:path) && ::File.exist?(object.path)
     end
 
     def self.big_file?(object)
       file?(object) && object.size >= Uploadcare.configuration.multipart_size_threshold
+    end
+
+    def self.handle_upload_errors(response)
+      error = response.success[:error]
+      raise(RequestError, error[:content]) if error
     end
 
     def self.handle_upload_errors(response)
