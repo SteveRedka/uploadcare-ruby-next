@@ -1,10 +1,13 @@
 # frozen_string_literal: true
+
 require 'retries'
 
 module Uploadcare
   # This is client for general uploads
   # https://uploadcare.com/api-refs/upload-api/#tag/Upload
   class UploadClient < ApiStruct::Client
+    include ErrorHandler
+    include ThrottleHandler
     upload_api
 
     # https://uploadcare.com/api-refs/upload-api/#operation/baseUpload
@@ -48,6 +51,11 @@ module Uploadcare
     end
 
     private
+
+    alias api_struct_post post
+    def post(**args)
+      handle_throttling { api_struct_post(**args) }
+    end
 
     def poll_upload_response(token)
       with_retries(max_tries: MAX_REQUEST_TRIES, base_sleep_seconds: BASE_REQUEST_SLEEP_SECONDS,
