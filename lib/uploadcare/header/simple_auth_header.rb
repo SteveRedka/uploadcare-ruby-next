@@ -7,7 +7,7 @@
 module Uploadcare
   class SimpleAuthHeader
     def self.call
-      { 'Authorization': "Uploadcare.Simple #{PUBLIC_KEY}:#{SECRET_KEY}" }
+      { 'Authorization': "Uploadcare.Simple #{Uploadcare.configuration.public_key}:#{Uploadcare.configuration.secret_key}" }
     end
   end
 end

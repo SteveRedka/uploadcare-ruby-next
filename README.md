@@ -7,10 +7,13 @@ Set your Uploadcare keys. You can do it either in config file, or through
 environment variables `UPLOADCARE_PUBLIC_KEY` and `UPLOADCARE_SECRET_KEY`
 
 ```ruby
-# config/uploadcare_settings.rb
-module Uploadcare
-  PUBLIC_KEY = ENV.fetch('UPLOADCARE_PUBLIC_KEY') || 'your_public_key'
-  SECRET_KEY = ENV.fetch('UPLOADCARE_SECRET_KEY') || 'your_secret_key'
+# config/uploadcare/uploadcare_configuration.rb
+
+require 'uploadcare'
+
+Uploadcare.configure do |config|
+  config.public_key = ENV.fetch('UPLOADCARE_PUBLIC_KEY')
+  config.secret_key = ENV.fetch('UPLOADCARE_SECRET_KEY')
 end
 ```
 
@@ -24,10 +27,6 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install uploadcare-ruby
-
 ## Usage
 
 ## Development
@@ -37,7 +36,7 @@ https://uploadcare.com/api-refs/rest-api/
 
 ### Architecture
 Project uses [ApiStruct](https://github.com/rubygarage/api_struct) architecture.
-#### uploadcare_settings.rb
+#### Uploadcare.configuration.rb
 This file lists used endpoints and their defaults
 #### Client
 This layer contains services that interact with API endpoints, and handles different specifics of talking to different APIs (such as: different headers, encryptions, params, etc..)

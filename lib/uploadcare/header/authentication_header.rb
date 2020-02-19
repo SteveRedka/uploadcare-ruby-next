@@ -9,13 +9,13 @@ require 'digest/md5'
 module Uploadcare
   class AuthenticationHeader
     def self.call(**options)
-      case AUTH_TYPE
+      case Uploadcare.configuration.auth_type
       when 'Uploadcare'
         SecureAuthHeader.call(options)
       when 'Uploadcare.Simple'
         SimpleAuthHeader.call
       else
-        raise ArgumentError, "Unknown auth_scheme: '#{AUTH_TYPE}'"
+        raise ArgumentError, "Unknown auth_scheme: '#{Uploadcare.configuration.auth_type}'"
       end
     end
   end

@@ -38,7 +38,7 @@ module Uploadcare
 
     def upload_from_url(url, **options)
       body = HTTP::FormData::Multipart.new({
-        'pub_key': PUBLIC_KEY,
+        'pub_key': Uploadcare.configuration.public_key,
         'source_url': url
       }.merge(options))
       token_response = post(path: 'from_url/', headers: { 'Content-type': body.content_type }, body: body)
@@ -58,8 +58,9 @@ module Uploadcare
     end
 
     def poll_upload_response(token)
-      with_retries(max_tries: MAX_REQUEST_TRIES, base_sleep_seconds: BASE_REQUEST_SLEEP_SECONDS,
-                   max_sleep_seconds: MAX_REQUEST_SLEEP_SECONDS) do
+      with_retries(max_tries: Uploadcare.configuration.max_request_tries,
+                   base_sleep_seconds: Uploadcare.configuration.base_request_sleep_seconds,
+                   max_sleep_seconds: Uploadcare.configuration.max_request_sleep_seconds) do
         response = get_status_response(token)
         raise RequestError if %w[progress waiting unknown].include?(response.success[:status])
         response
@@ -82,7 +83,7 @@ module Uploadcare
       store = '1' if store == true
       store = '0' if store == false
       {
-        'UPLOADCARE_PUB_KEY': PUBLIC_KEY,
+        'UPLOADCARE_PUB_KEY': Uploadcare.configuration.public_key,
         'UPLOADCARE_STORE': store
       }
     end

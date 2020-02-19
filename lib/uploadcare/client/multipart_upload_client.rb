@@ -41,7 +41,7 @@ module Uploadcare
       store = '1' if store == true
       store = '0' if store == false
       {
-        'UPLOADCARE_PUB_KEY': PUBLIC_KEY,
+        'UPLOADCARE_PUB_KEY': Uploadcare.configuration.public_key,
         'UPLOADCARE_STORE': store
       }
     end

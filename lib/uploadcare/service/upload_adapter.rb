@@ -46,7 +46,7 @@ module Uploadcare
     end
 
     def self.big_file?(object)
-      file?(object) && object.size >= MULTIPART_SIZE_THRESHOLD
+      file?(object) && object.size >= Uploadcare.configuration.multipart_size_threshold
     end
 
     def self.handle_upload_errors(response)

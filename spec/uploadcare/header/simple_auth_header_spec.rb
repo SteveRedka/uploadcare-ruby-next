@@ -4,9 +4,9 @@ module Uploadcare
   RSpec.describe SimpleAuthHeader do
     describe 'Uploadcare.Simple' do
       before do
-        Uploadcare::PUBLIC_KEY = 'foo'
-        Uploadcare::SECRET_KEY = 'bar'
-        Uploadcare::AUTH_TYPE = 'Uploadcare.Simple'
+        Uploadcare.configuration.public_key = 'foo'
+        Uploadcare.configuration.secret_key = 'bar'
+        Uploadcare.configuration.auth_type = 'Uploadcare.Simple'
       end
 
       it 'returns correct headers for simple authentication' do
