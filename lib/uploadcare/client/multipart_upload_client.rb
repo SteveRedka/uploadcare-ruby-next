@@ -29,7 +29,7 @@ module Uploadcare
 
     def upload_complete(uuid)
       body = HTTP::FormData::Multipart.new(
-        'UPLOADCARE_PUB_KEY': PUBLIC_KEY,
+        'UPLOADCARE_PUB_KEY': Uploadcare.configuration.public_key,
         'uuid': uuid
       )
       post(path: 'multipart/complete/', body: body, headers: { 'Content-type': body.content_type })

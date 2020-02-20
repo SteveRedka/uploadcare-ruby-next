@@ -62,6 +62,8 @@ module Uploadcare
     describe 'upload' do
       it 'does the entire multipart upload routine' do
         VCR.use_cassette('upload_multipart_upload') do
+          # Minimum size for size to be valid for multiupload is 10 mb
+          Uploadcare.configuration.multipart_size_threshold = 10 * 1024 * 1024
           response = subject.upload(big_file)
           response_value = response.value!
           expect(response_value[:uuid]).not_to be_empty
