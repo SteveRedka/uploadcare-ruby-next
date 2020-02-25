@@ -1,10 +1,26 @@
-# Uploadcare::Ruby
+# Ruby integration for Uploadcare
 
-Ruby wrapper for Uploadcare API
+<p align="left">
+    <a href="LICENSE">
+        <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT License">
+    </a>
+</p>
+
+Uploadcare Ruby integration handles uploads and further operations with files by
+wrapping Upload and REST APIs.
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Development](#development)
+* [Useful links](#useful-links)
 
 ## Installation
-Set your Uploadcare keys. You can do it either in config file, or through
-environment variables `UPLOADCARE_PUBLIC_KEY` and `UPLOADCARE_SECRET_KEY`
+
+Create your project in [Uploadcare dashboard](https://uploadcare.com/dashboard/)
+and copy its API keys from there.
+
+Set your Uploadcare keys in config file or through environment variables
+`UPLOADCARE_PUBLIC_KEY` and `UPLOADCARE_SECRET_KEY`
 
 ```ruby
 # config/uploadcare/uploadcare_configuration.rb
@@ -30,14 +46,13 @@ And then execute:
 ## Usage
 
 ## Development
-### Docs
-https://uploadcare.com/docs/api_reference/
-https://uploadcare.com/api-refs/rest-api/
 
 ### Architecture
+
 Project uses [ApiStruct](https://github.com/rubygarage/api_struct) architecture.
 #### Uploadcare.configuration.rb
 This file lists used endpoints and their defaults
+
 #### Client
 This layer contains services that interact with API endpoints, and handles different specifics of talking to different APIs (such as: different headers, encryptions, params, etc..)
 #### Entity
@@ -49,10 +64,16 @@ This folder contains objects representing objects as they exist in Uploadcare cl
 #### Service
 Objects that don't fit any pattern
 
------
+#### Service
 
-## Contributing
+Objects that don't fit any pattern
 
-## License
+## Useful links
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+[Uploadcare documentation](https://uploadcare.com/docs/)  
+[Upload API reference](https://uploadcare.com/api-refs/upload-api/)  
+[REST API reference](https://uploadcare.com/api-refs/rest-api/)  
+[Changelog](https://github.com/uploadcare/uploadcare-swift/blob/master/CHANGELOG.md)  
+[Contributing guide](https://github.com/uploadcare/.github/blob/master/CONTRIBUTING.md)  
+[Security policy](https://github.com/uploadcare/uploadcare-swift/security/policy)  
+[Support](https://github.com/uploadcare/.github/blob/master/SUPPORT.md)  
