@@ -75,5 +75,5 @@ Objects that don't fit any pattern
 [REST API reference](https://uploadcare.com/api-refs/rest-api/)  
 [Changelog](/CHANGELOG.md)  
 [Contributing guide](https://github.com/uploadcare/.github/blob/master/CONTRIBUTING.md)  
-[Security policy](/security/policy)  
+[Security policy](https://github.com/uploadcare/uploadcare-ruby/security/policy)  
 [Support](https://github.com/uploadcare/.github/blob/master/SUPPORT.md)  
