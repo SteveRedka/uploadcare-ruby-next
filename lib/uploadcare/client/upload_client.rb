@@ -78,18 +78,5 @@ module Uploadcare
          HTTP::FormData::File.new(file)]
       end .to_h
     end
-
-    def upload_params(store = 'auto')
-      store = '1' if store == true
-      store = '0' if store == false
-      {
-        'UPLOADCARE_PUB_KEY': Uploadcare.configuration.public_key,
-        'UPLOADCARE_STORE': store
-      }
-    end
-
-    def file?(object)
-      object.respond_to?(:path) && ::File.exist?(object.path)
-    end
   end
 end
