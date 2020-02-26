@@ -5,8 +5,14 @@
 require 'client/multipart_upload/chunks_client'
 
 module Uploadcare
+  # Client for multipart uploads
   class MultipartUploadClient < ApiStruct::Client
+    include ErrorHandler
+    include ThrottleHandler
     upload_api
+
+    # Upload a big file by splitting it into parts and sending those parts into assigned buckets
+    # object should be File
 
     def upload(object, store: false)
       response = upload_start(object, store: store)
@@ -22,7 +28,7 @@ module Uploadcare
       body = HTTP::FormData::Multipart.new(
         upload_params(store).merge(multiupload_metadata(object))
       )
-      response = post(path: 'multipart/start/',
+      post(path: 'multipart/start/',
            headers: { 'Content-type': body.content_type },
            body: body)
     end
@@ -48,11 +54,16 @@ module Uploadcare
 
     def multiupload_metadata(file)
       file = HTTP::FormData::File.new(file)
-      multiupload_metadata = {
+      {
         filename: file.filename,
         size: file.size,
         content_type: file.content_type
       }
+    end
+
+    alias api_struct_post post
+    def post(**args)
+      handle_throttling { api_struct_post(**args) }
     end
   end
 end

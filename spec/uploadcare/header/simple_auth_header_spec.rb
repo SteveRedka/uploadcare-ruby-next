@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 module Uploadcare
@@ -10,7 +12,7 @@ module Uploadcare
       end
 
       it 'returns correct headers for simple authentication' do
-        expect(Uploadcare::SimpleAuthHeader.call).to eq({ 'Authorization': "Uploadcare.Simple foo:bar" })
+        expect(Uploadcare::SimpleAuthHeader.call).to eq('Authorization': 'Uploadcare.Simple foo:bar')
       end
     end
   end
