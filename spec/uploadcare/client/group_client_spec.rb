@@ -24,7 +24,7 @@ module Uploadcare
     describe 'info' do
       it 'returns group info' do
         VCR.use_cassette('upload_group_info') do
-          response = subject.info('fc194fec-5793-4403-a593-686af4be412e~2')
+          response = subject.info('69bafb24-5bfc-45d8-ba85-b3ea88e8eb17~1')
           response_body = response.success
           %i[id datetime_created datetime_stored files_count cdn_url url files].each do |key|
             expect(response_body).to have_key key

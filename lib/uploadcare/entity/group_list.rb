@@ -11,6 +11,6 @@ module Uploadcare
     attr_entity :next, :previous, :total, :per_page, :results
     has_entities :results, as: Uploadcare::Group
 
-    alias :groups :results
+    alias groups results
   end
 end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://upload.uploadcare.com/group/info/?group_id=fc194fec-5793-4403-a593-686af4be412e~2&pub_key=c8499ee6dc44194c00d2
+    uri: https://upload.uploadcare.com/group/info/?group_id=69bafb24-5bfc-45d8-ba85-b3ea88e8eb17~1&pub_key=ecd779dc169645ce3c91
     body:
       encoding: UTF-8
       string: ''
@@ -23,11 +23,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 27 Jan 2020 11:13:48 GMT
+      - Thu, 27 Feb 2020 10:55:15 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1247'
+      - '796'
       Connection:
       - close
       Server:
@@ -51,7 +51,7 @@ http_interactions:
       - GET, HEAD, OPTIONS
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"fc194fec-5793-4403-a593-686af4be412e~2","datetime_created":"2020-01-27T10:45:12.498576Z","datetime_stored":null,"files_count":2,"cdn_url":"https://ucarecdn.com/fc194fec-5793-4403-a593-686af4be412e~2/","url":"https://api.uploadcare.com/groups/fc194fec-5793-4403-a593-686af4be412e~2/","files":[{"default_effects":"","is_stored":true,"done":5345,"file_id":"e9a9f291-cc52-4388-bf65-9feec1c75ff9","total":5345,"size":5345,"uuid":"e9a9f291-cc52-4388-bf65-9feec1c75ff9","is_image":true,"filename":"imagepng.jpeg","video_info":null,"is_ready":true,"original_filename":"image.png.jpeg","image_info":{"color_mode":"RGB","orientation":null,"format":"JPEG","sequence":false,"height":183,"width":190,"geo_location":null,"datetime_original":null,"dpi":null},"mime_type":"image/jpeg"},{"default_effects":"","is_stored":true,"done":3118,"file_id":"c724feac-86f7-447c-b2d6-b0ced220173d","total":3118,"size":3118,"uuid":"c724feac-86f7-447c-b2d6-b0ced220173d","is_image":true,"filename":"Test.png","video_info":null,"is_ready":true,"original_filename":"Test.png","image_info":{"color_mode":"RGBA","orientation":null,"format":"PNG","sequence":false,"height":300,"width":300,"geo_location":null,"datetime_original":null,"dpi":[72,72]},"mime_type":"image/png"}]}'
+      string: '{"id":"69bafb24-5bfc-45d8-ba85-b3ea88e8eb17~1","datetime_created":"2020-02-27T10:51:34.474296Z","datetime_stored":null,"files_count":1,"cdn_url":"https://ucarecdn.com/69bafb24-5bfc-45d8-ba85-b3ea88e8eb17~1/","url":"https://api.uploadcare.com/groups/69bafb24-5bfc-45d8-ba85-b3ea88e8eb17~1/","files":[{"default_effects":"","is_stored":false,"done":12585265,"file_id":"b94b57bd-f478-4975-a21a-f0fae1118bb1","total":12585265,"size":12585265,"uuid":"b94b57bd-f478-4975-a21a-f0fae1118bb1","is_image":true,"filename":"big.jpeg","video_info":null,"is_ready":true,"original_filename":"big.jpeg","image_info":{"color_mode":"RGB","orientation":1,"format":"JPEG","sequence":false,"height":1901,"width":5684,"geo_location":null,"datetime_original":null,"dpi":[72,72]},"mime_type":"application/octet-stream"}]}'
     http_version: 
-  recorded_at: Mon, 27 Jan 2020 11:13:48 GMT
+  recorded_at: Thu, 27 Feb 2020 10:55:15 GMT
 recorded_with: VCR 5.0.0

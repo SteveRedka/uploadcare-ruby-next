@@ -14,7 +14,7 @@ module Uploadcare
     context 'info' do
       before do
         VCR.use_cassette('upload_group_info') do
-          @group = subject.info('fc194fec-5793-4403-a593-686af4be412e~2')
+          @group = subject.info('69bafb24-5bfc-45d8-ba85-b3ea88e8eb17~1')
         end
       end
 
@@ -27,7 +27,7 @@ module Uploadcare
 
       it 'has files' do
         expect(@group.files).not_to be_empty
-        expect(@group.files.first).to be_a_kind_of(Uploadcare::File)
+        expect(@group.files.first).to be_a_kind_of(Uploadcare::Entity::File)
       end
     end
   end
