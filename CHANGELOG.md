@@ -2,6 +2,7 @@
 
 ## [Unreleased](https://github.com/uploadcare/uploadcare-ruby-next/tree/develop)
 
+- Added Upload/group functionality
 - Added user API
 [Full Changelog](https://github.com/uploadcare/uploadcare-ruby-next/compare/0baded5593869f1d741f0fff22c58814970726b2...HEAD)
 
