@@ -39,8 +39,8 @@ module Uploadcare
       request_delete(uri: '/files/storage/', body: body)
     end
 
-    alias store batch_store
-    alias delete batch_delete
+    alias store_files batch_store
+    alias delete_files batch_delete
     alias list file_list
   end
 end
