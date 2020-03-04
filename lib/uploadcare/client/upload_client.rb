@@ -16,7 +16,7 @@ module Uploadcare
 
       def upload_many(arr, **options)
         body = HTTP::FormData::Multipart.new(
-          Upload::UploadParamsGenerator.call(options[:store]).merge(files_formdata(arr))
+          Param::Upload::UploadParamsGenerator.call(options[:store]).merge(files_formdata(arr))
         )
         post(path: 'base/',
              headers: { 'Content-type': body.content_type },

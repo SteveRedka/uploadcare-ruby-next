@@ -11,6 +11,7 @@ module Uploadcare
       include Uploadcare::Concerns::ErrorHandler
       include Uploadcare::Concerns::ThrottleHandler
       include Exception
+      include Param
       rest_api 'files'
 
       alias api_struct_delete delete
