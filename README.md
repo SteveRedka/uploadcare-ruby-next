@@ -7,7 +7,6 @@ wrapping Upload and REST APIs.
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Configuration](#configuration)
 * [Development](DEVELOPMENT.md)
 * [Useful links](#useful-links)
 
@@ -27,8 +26,11 @@ If already not, create your project in [Uploadcare dashboard](https://uploadcare
 its API keys from there.
 
 Set your Uploadcare keys in config file or through environment variables
-`UPLOADCARE_PUBLIC_KEY` and `UPLOADCARE_SECRET_KEY`, or [configure your app yourself](#Configuration) if you are using
-different way of storing keys.
+`UPLOADCARE_PUBLIC_KEY` and `UPLOADCARE_SECRET_KEY`.
+
+Or configure your app yourself if you are using different way of storing keys.
+Gem configuration is available in `Uploadcare.configuration`. Full list of
+settings can be seen in [`lib/uploadcare/default_configuration.rb`](lib/uploadcare/default_configuration.rb)
 
 ```bash
 export UPLOADCARE_PUBLIC_KEY=demopublickey
@@ -219,9 +221,6 @@ object is also an Hashie::Mash, so every methods out of
 # while that one was empty, it usually goes like this:
 # [{"email": collaborator@gmail.com, "name": "Collaborator"}, {"email": collaborator@gmail.com, "name": "Collaborator"}]
 ```
-
-## Configuration
-Gem configuration is available in `Uploadcare.configuration`. Full list of settings can be seen in [`lib/uploadcare/default_configuration.rb`](lib/uploadcare/default_configuration.rb)
 
 ## Development
 
