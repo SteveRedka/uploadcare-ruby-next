@@ -1,17 +1,6 @@
-## How to contribute
+## ApiStruct
 
-https://github.com/uploadcare/.github/blob/master/CONTRIBUTING.md
-
-## Useful docs
-
-### Uploadcare:
-
-* https://uploadcare.com/docs/api_reference/
-* https://uploadcare.com/api-refs/rest-api/
-
-### ApiStruct:
-
-* https://github.com/rubygarage/api_struct/
+https://github.com/rubygarage/api_struct/
 
 ## Uploadcare-ruby gem architecture
 
