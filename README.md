@@ -7,7 +7,6 @@ wrapping Upload and REST APIs.
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Development](DEVELOPMENT.md)
 * [Useful links](#useful-links)
 
 ## Installation
@@ -222,12 +221,9 @@ object is also an Hashie::Mash, so every methods out of
 # [{"email": collaborator@gmail.com, "name": "Collaborator"}, {"email": collaborator@gmail.com, "name": "Collaborator"}]
 ```
 
-## Development
-
-See [DEVELOPMENT.md](/DEVELOPMENT.md)  
-
 ## Useful links
 
+[Development](/DEVELOPMENT.md)  
 [Uploadcare documentation](https://uploadcare.com/docs/?utm_source=github&utm_medium=referral&utm_campaign=uploadcare-ruby)  
 [Upload API reference](https://uploadcare.com/api-refs/upload-api/?utm_source=github&utm_medium=referral&utm_campaign=uploadcare-ruby)  
 [REST API reference](https://uploadcare.com/api-refs/rest-api/?utm_source=github&utm_medium=referral&utm_campaign=uploadcare-ruby)  
