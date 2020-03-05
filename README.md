@@ -86,11 +86,12 @@ Uploadcare supports multiple ways to upload files:
 ```
 
 There are explicit ways to select upload type:
-```ruby
-@api.upload_from_url('https://placekitten.com/96/139')
 
+```ruby
 files = [File.open('1.jpg'), File.open('1.jpg']
 @api.upload_files(files)
+
+@api.upload_from_url('https://placekitten.com/96/139')
 
 # multipart upload - can be useful for files bigger than 10 mb
 @api.multipart_upload(File.open('big_file.bin'))
