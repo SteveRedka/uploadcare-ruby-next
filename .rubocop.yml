@@ -6,8 +6,3 @@ Layout/LineLength:
 
 IneffectiveAccessModifier:
   Enabled: false
-
-Metrics:
-  Exclude:
-    - 'bin/'
-    - 'spec/**/*'
