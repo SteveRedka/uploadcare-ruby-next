@@ -183,6 +183,15 @@ That's a requirement of our API.
 @group = @api.create_group @files
 ```
 
+#### Webhook
+https://uploadcare.com/docs/api_reference/rest/webhooks/
+
+You can use webhooks to provide notifications about your uploads to target urls.
+This gem lets you create and manage webhooks.
+```ruby
+
+```
+
 #### Project
 `Project` provides basic info about the connected Uploadcare project.
 That object is also an Hashie::Mash, so every methods out of

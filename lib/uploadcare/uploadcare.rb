@@ -13,6 +13,7 @@ Gem.find_files('header/**/*.rb').each { |path| require path }
 Gem.find_files('service/**/*.rb').each { |path| require path }
 
 # Ruby wrapper for Uploadcare API
+#
 # https://uploadcare.com/docs/api_reference
 module Uploadcare
 end

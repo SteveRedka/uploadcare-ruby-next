@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# frozen_string_literal true
-
 module Uploadcare
   # Groups serve a purpose of better organizing files in your Uploadcare projects.
   # You can create one from a set of files by using their UUIDs.
