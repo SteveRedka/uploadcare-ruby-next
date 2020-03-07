@@ -2,6 +2,7 @@
 
 require 'uploadcare_configuration'
 require 'default_configuration'
+require 'param/user_agent_header'
 
 # File with api endpoints
 
@@ -11,7 +12,8 @@ ApiStruct::Settings.configure do |config|
       root: Uploadcare.configuration.rest_api_root,
       headers: {
         'Content-type': 'application/json',
-        'Accept': 'application/vnd.uploadcare-v0.5+json'
+        'Accept': 'application/vnd.uploadcare-v0.5+json',
+        'User-Agent': Uploadcare::Param::UserAgent.call
       }
     },
     upload_api: {
