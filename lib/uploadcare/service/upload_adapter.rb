@@ -6,6 +6,7 @@ module Uploadcare
   # This object decides which of upload methods to use.
   # Returns either file or array of files
   class UploadAdapter
+    include Client
     extend Uploadcare::ThrottleHandler
     def self.call(object, **options)
       if big_file?(object)

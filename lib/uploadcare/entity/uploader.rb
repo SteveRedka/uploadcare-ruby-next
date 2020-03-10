@@ -4,7 +4,7 @@ module Uploadcare
   module Entity
     # This serializer lets user upload files by various means, and usually returns an array of files
     # https://uploadcare.com/api-refs/upload-api/#tag/Upload
-    class Uploader < ApiStruct::Entity
+    class Uploader < Entity
       client_service UploadClient
       client_service MultipartUploadClient, only: :upload, prefix: :multipart
 
