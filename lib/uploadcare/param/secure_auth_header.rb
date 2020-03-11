@@ -6,8 +6,8 @@ module Uploadcare
   module Param
     # This object returns headers needed for authentication
     # This authentication method is more secure, but more tedious
-    # https://uploadcare.com/docs/api_reference/rest/requests_auth/#auth-uploadcare
     class SecureAuthHeader
+      # @see https://uploadcare.com/docs/api_reference/rest/requests_auth/#auth-uploadcare
       def self.call(method: 'GET', body: '', content_type: 'application/json', uri: '')
         @method = method
         @body = body

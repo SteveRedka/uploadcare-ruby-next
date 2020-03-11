@@ -5,14 +5,15 @@ require 'retries'
 module Uploadcare
   module Client
     # This is client for general uploads
-    # https://uploadcare.com/api-refs/upload-api/#tag/Upload
+    #
+    # @see https://uploadcare.com/api-refs/upload-api/#tag/Upload
     class UploadClient < ApiStruct::Client
       include Concerns::ErrorHandler
       include Concerns::ThrottleHandler
       include Exception
       upload_api
 
-      # https://uploadcare.com/api-refs/upload-api/#operation/baseUpload
+      # @see https://uploadcare.com/api-refs/upload-api/#operation/baseUpload
 
       def upload_many(arr, **options)
         body = HTTP::FormData::Multipart.new(
@@ -31,7 +32,7 @@ module Uploadcare
       end
 
       # Upload files from url
-      # https://uploadcare.com/api-refs/upload-api/#operation/fromURLUpload
+      # @see https://uploadcare.com/api-refs/upload-api/#operation/fromURLUpload
       # options:
       # - check_URL_duplicates
       # - filename
@@ -69,10 +70,14 @@ module Uploadcare
         end
       end
 
+      # Check upload status
+
       def get_status_response(token)
         query_params = { token: token }
         get(path: 'from_url/status/', params: query_params)
       end
+
+      # Convert
 
       def files_formdata(arr)
         arr.map do |file|

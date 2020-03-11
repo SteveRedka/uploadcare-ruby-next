@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
-# This object returns headers needed for authentication
-# This authentication method is more secure, but more tedious
-# https://uploadcare.com/docs/api_reference/rest/requests_auth/#auth-uploadcare
-
 require 'digest/md5'
 
 module Uploadcare
   module Param
+    # This object returns headers needed for authentication
+    # This authentication method is more secure, but more tedious
     class AuthenticationHeader
+      # @see https://uploadcare.com/docs/api_reference/rest/requests_auth/#auth-uploadcare
       def self.call(**options)
         case Uploadcare.configuration.auth_type
         when 'Uploadcare'

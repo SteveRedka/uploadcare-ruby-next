@@ -4,7 +4,7 @@ module Uploadcare
   module Entity
     # This serializer is responsible for webhook handling
     #
-    # https://uploadcare.com/docs/api_reference/rest/webhooks/
+    # @see https://uploadcare.com/docs/api_reference/rest/webhooks/
     class Webhook < Entity
       client_service WebhookClient
 

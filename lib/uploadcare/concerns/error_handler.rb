@@ -7,6 +7,11 @@ module Uploadcare
     module ErrorHandler
       include Exception
 
+      # Extension of ApiStruct's failure method
+      #
+      # Raises errors instead of returning falsey objects
+      # @see https://github.com/rubygarage/api_struct/blob/master/lib/api_struct/client.rb#L55
+
       def failure(response)
         catch_upload_errors(response)
         parsed_response = JSON.parse(response.body.to_s)
@@ -14,6 +19,12 @@ module Uploadcare
       rescue JSON::ParserError
         raise RequestError, response.status
       end
+
+      # Extension of ApiStruct's wrap method
+      #
+      # Catches throttling errors and Upload API errors
+      #
+      # @see https://github.com/rubygarage/api_struct/blob/master/lib/api_struct/client.rb#L45
 
       def wrap(response)
         raise_throttling_error(response) if response.status == 429

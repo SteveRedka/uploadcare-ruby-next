@@ -1,4 +1,4 @@
-# https://uploadcare.com/docs/api_reference/upload/signed_uploads/
+# @see https://uploadcare.com/docs/api_reference/upload/signed_uploads/
 
 require 'spec_helper'
 

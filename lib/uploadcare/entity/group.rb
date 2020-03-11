@@ -8,7 +8,7 @@ module Uploadcare
     #
     # You can create one from a set of files by using their UUIDs.
     #
-    # https://uploadcare.com/docs/api_reference/upload/groups/
+    # @see https://uploadcare.com/docs/api_reference/upload/groups/
     class Group < Entity
       client_service RestGroupClient, prefix: 'rest', only: :store
       client_service GroupClient
@@ -17,7 +17,7 @@ module Uploadcare
       has_entities :files, as: Uploadcare::Entity::File
 
       # Remove these lines and bump api_struct version when this PR is accepted:
-      # https://github.com/rubygarage/api_struct/pull/15
+      # @see https://github.com/rubygarage/api_struct/pull/15
 
       def self.store(uuid)
         rest_store(uuid)

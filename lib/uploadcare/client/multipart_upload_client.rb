@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# https://uploadcare.com/api-refs/upload-api/#tag/Upload
+# @see https://uploadcare.com/api-refs/upload-api/#tag/Upload
 
 require 'client/multipart_upload/chunks_client'
 
@@ -26,6 +26,8 @@ module Uploadcare
         upload_complete(uuid)
       end
 
+      # Asks Uploadcare server to create a number of storage bin for uploads
+
       def upload_start(object, store: false)
         body = HTTP::FormData::Multipart.new(
           upload_params(store).merge(multiupload_metadata(object))
@@ -34,6 +36,8 @@ module Uploadcare
              headers: { 'Content-type': body.content_type },
              body: body)
       end
+
+      # When every chunk is uploaded, ask Uploadcare server to finish the upload
 
       def upload_complete(uuid)
         body = HTTP::FormData::Multipart.new(

@@ -17,7 +17,7 @@ module Uploadcare
 
     def_delegator File, :file
     def_delegators FileList, :file_list, :store_files, :delete_files
-    # def_delegators Group, :group
+    def_delegators Group, :group
     def_delegators Project, :project
     def_delegators Uploader, :upload, :upload_files, :upload_url
     def_delegators Webhook, :create_webhook, :list_webhooks, :delete_webhook, :update_webhook

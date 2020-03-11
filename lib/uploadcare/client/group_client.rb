@@ -6,13 +6,13 @@ module Uploadcare
   module Client
     # Groups serve a purpose of better organizing files in your Uploadcare projects.
     # You can create one from a set of files by using their UUIDs.
-    # https://uploadcare.com/docs/api_reference/upload/groups/
+    # @see https://uploadcare.com/docs/api_reference/upload/groups/
     class GroupClient < ApiStruct::Client
       upload_api
       include Concerns::ErrorHandler
 
       # Create files group from a set of files by using their UUIDs.
-      # https://uploadcare.com/api-refs/upload-api/#operation/createFilesGroup
+      # @see https://uploadcare.com/api-refs/upload-api/#operation/createFilesGroup
 
       def create(file_list, **options)
         body_hash = {
@@ -25,7 +25,7 @@ module Uploadcare
       end
 
       # Get group info
-      # https://uploadcare.com/api-refs/upload-api/#operation/filesGroupInfo
+      # @see https://uploadcare.com/api-refs/upload-api/#operation/filesGroupInfo
 
       def info(group_id)
         get(path: 'group/info/', params: { 'pub_key': Uploadcare.configuration.public_key, 'group_id': group_id })

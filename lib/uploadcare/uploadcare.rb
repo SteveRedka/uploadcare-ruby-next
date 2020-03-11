@@ -16,6 +16,6 @@ require 'api/api'
 
 # Ruby wrapper for Uploadcare API
 #
-# https://uploadcare.com/docs/api_reference
+# @see https://uploadcare.com/docs/api_reference
 module Uploadcare
 end

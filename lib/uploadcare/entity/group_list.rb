@@ -6,7 +6,7 @@ module Uploadcare
   module Entity
     # List of groups
     #
-    # https://uploadcare.com/docs/api_reference/upload/groups/
+    # @see https://uploadcare.com/docs/api_reference/upload/groups/
     class GroupList < Entity
       client_service RestGroupClient, only: :list
 

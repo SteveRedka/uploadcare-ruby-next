@@ -20,6 +20,7 @@ module Uploadcare
       alias api_struct_put put
 
       # Send request with authentication header
+      # Handle throttling as well
 
       def request(method: 'GET', uri:, **options)
         headers = AuthenticationHeader.call(method: method.upcase, uri: uri, **options)

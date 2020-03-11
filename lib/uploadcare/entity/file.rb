@@ -4,7 +4,7 @@ module Uploadcare
   module Entity
     # This serializer returns a single file
     #
-    # https://uploadcare.com/docs/api_reference/rest/handling_projects/
+    # @see https://uploadcare.com/docs/api_reference/rest/handling_projects/
     class File < Entity
       client_service FileClient
 
