@@ -9,8 +9,8 @@ module Uploadcare
     # Client for multipart uploads
     class MultipartUploadClient < ApiStruct::Client
       include MultipartUpload
-      include ErrorHandler
-      include ThrottleHandler
+      include Concerns::ErrorHandler
+      include Concerns::ThrottleHandler
       upload_api
 
       # Upload a big file by splitting it into parts and sending those parts into assigned buckets

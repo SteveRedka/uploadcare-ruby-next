@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
-require 'concerns/request_error'
-
 module Uploadcare
   # This object decides which of upload methods to use.
   # Returns either file or array of files
   class UploadAdapter
     include Client
-    extend Uploadcare::ThrottleHandler
+    extend Uploadcare::Concerns::ThrottleHandler
     def self.call(object, **options)
       if big_file?(object)
         upload_big_file(object, **options)

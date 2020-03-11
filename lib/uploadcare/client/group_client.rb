@@ -9,7 +9,7 @@ module Uploadcare
     # https://uploadcare.com/docs/api_reference/upload/groups/
     class GroupClient < ApiStruct::Client
       upload_api
-      include ErrorHandler
+      include Concerns::ErrorHandler
 
       # Create files group from a set of files by using their UUIDs.
       # https://uploadcare.com/api-refs/upload-api/#operation/createFilesGroup
