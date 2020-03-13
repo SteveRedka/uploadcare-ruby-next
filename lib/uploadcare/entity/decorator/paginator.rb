@@ -63,8 +63,12 @@ module Uploadcare
         # @yield [Block]
 
         def each
-          all.each do |obj|
-            yield obj
+          current_page = self
+          while current_page
+            current_page.results.each do |obj|
+              yield obj
+            end
+            current_page = current_page.next_page
           end
         end
 
