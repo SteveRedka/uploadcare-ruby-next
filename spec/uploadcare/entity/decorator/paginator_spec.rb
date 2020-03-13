@@ -47,6 +47,19 @@ module Uploadcare
             end
           end
         end
+
+        describe 'each' do
+          it 'iterates each page' do
+            VCR.use_cassette('rest_file_list_each') do
+              fl_with_params = FileList.file_list(limit: 1)
+              entities = []
+              fl_with_params.each do |page|
+                entities << page.results[0]
+              end
+              expect(entities.length).to eq 3
+            end
+          end
+        end
       end
     end
   end

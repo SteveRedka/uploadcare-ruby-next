@@ -25,6 +25,8 @@ module Uploadcare
 
         def next_page
           url = @entity[:next]
+          return unless url
+
           query = URI.decode_www_form(URI(url).query).to_h.transform_keys(&:to_sym)
           self.class.list(**query)
         end
@@ -33,6 +35,8 @@ module Uploadcare
 
         def previous_page
           url = @entity[:previous]
+          return unless url
+
           query = URI.decode_www_form(URI(url).query).to_h.transform_keys(&:to_sym)
           self.class.list(**query)
         end
@@ -53,6 +57,18 @@ module Uploadcare
           @entity[:next] = nil
           @entity[:per_page] = @entity[:total]
           self
+        end
+
+        # iterate through pages, starting with current one
+        #
+        # @yield [Block]
+
+        def each
+          page = self
+          while page
+            yield page
+            page = page.next_page
+          end
         end
 
         private
