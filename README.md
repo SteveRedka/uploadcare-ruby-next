@@ -2,6 +2,7 @@
 
 ![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 ![travis](https://travis-ci.com/SteveRedka/uploadcare-ruby-next.svg)
+[![Coverage Status](https://coveralls.io/repos/github/SteveRedka/uploadcare-ruby/badge.svg)](https://coveralls.io/github/SteveRedka/uploadcare-ruby)
 
 Uploadcare Ruby integration handles uploads and further operations with files by
 wrapping Upload and REST APIs.
