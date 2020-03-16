@@ -4,6 +4,7 @@
 ![travis](https://travis-ci.com/SteveRedka/uploadcare-ruby-next.svg)
 [![Coverage Status](https://coveralls.io/repos/github/SteveRedka/uploadcare-ruby-next/badge.svg?branch=master)](https://coveralls.io/github/SteveRedka/uploadcare-ruby-next?branch=master)
 [![Uploadcare stack on StackShare](https://coveralls.io/repos/github/SteveRedka/uploadcare-ruby/badge.svg)](https://camo.githubusercontent.com/333ecd8760aa792893418cd5b3d835e696359cda/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f746563682d737461636b2d3036393066612e7376673f7374796c653d666c6174)
+![CodeCov](https://img.shields.io/codecov/c/github/SteveRedka/uploadcare-ruby-next?token=f49b5ea5-3fe3-40ec-ad95-8b5f070eec05)
 
 Uploadcare Ruby integration handles uploads and further operations with files by
 wrapping Upload and REST APIs.
