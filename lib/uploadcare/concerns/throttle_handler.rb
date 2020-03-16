@@ -8,13 +8,11 @@ module Uploadcare
       # @yield executable block (HTTP request that may be throttled)
       def handle_throttling
         (Uploadcare.configuration.max_throttle_attempts - 1).times do
-          begin
-            return yield
-          rescue(Exception::ThrottleError) => error
-            wait_time = error.timeout
-            sleep(wait_time)
-            next
-          end
+          return yield
+        rescue(Exception::ThrottleError) => error
+          wait_time = error.timeout
+          sleep(wait_time)
+          next
         end
         yield
       end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # @see https://uploadcare.com/docs/api_reference/upload/signed_uploads/
 
 require 'spec_helper'
@@ -6,7 +8,7 @@ module Uploadcare
   module Param
     module Upload
       RSpec.describe Uploadcare::Upload::SignatureGenerator do
-        let!(:expires_at) { 1454903856 }
+        let!(:expires_at) { 1_454_903_856 }
         let!(:expected_result) { { signature: '46f70d2b4fb6196daeb2c16bf44a7f1e', expire: expires_at } }
 
         before do

@@ -8,6 +8,11 @@ module Uploadcare
       subject { GroupClient.new }
       let!(:uuids) { ['e9a9f291-cc52-4388-bf65-9feec1c75ff9', 'c724feac-86f7-447c-b2d6-b0ced220173d'] }
 
+      before(:each) do
+        Uploadcare.configuration.public_key = 'demopublickey'
+        Uploadcare.configuration.secret_key = 'demoprivatekey'
+      end
+
       describe 'create' do
         it 'creates a group' do
           VCR.use_cassette('upload_create_group') do

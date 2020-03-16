@@ -6,6 +6,12 @@ module Uploadcare
   module Entity
     RSpec.describe Group do
       subject { Group }
+
+      before(:each) do
+        Uploadcare.configuration.public_key = 'demopublickey'
+        Uploadcare.configuration.secret_key = 'demoprivatekey'
+      end
+
       it 'responds to expected methods' do
         %i[create info store].each do |method|
           expect(subject).to respond_to(method)

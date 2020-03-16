@@ -35,10 +35,10 @@ module Uploadcare
         post(uri: "/webhooks/#{id}/", content: body)
       end
 
-      alias :create_webhook :create
-      alias :list_webhooks :list
-      alias :delete_webhook :delete
-      alias :update_webhook :update
+      alias create_webhook create
+      alias list_webhooks list
+      alias delete_webhook delete
+      alias update_webhook update
     end
   end
 end

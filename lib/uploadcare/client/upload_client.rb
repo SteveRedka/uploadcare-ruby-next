@@ -40,10 +40,7 @@ module Uploadcare
       # - async - returns upload token instead of upload data
 
       def upload_from_url(url, **options)
-        body = HTTP::FormData::Multipart.new({
-          'pub_key': Uploadcare.configuration.public_key,
-          'source_url': url
-        }.merge(options))
+        body = from_url_formdata(url, options)
         token_response = post(path: 'from_url/', headers: { 'Content-type': body.content_type }, body: body)
         return token_response if options[:async]
 
@@ -84,6 +81,13 @@ module Uploadcare
           [HTTP::FormData::File.new(file).filename,
            HTTP::FormData::File.new(file)]
         end .to_h
+      end
+
+      def from_url_formdata(url, options)
+        HTTP::FormData::Multipart.new({
+          'pub_key': Uploadcare.configuration.public_key,
+          'source_url': url
+        }.merge(options))
       end
     end
   end

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 module Uploadcare
   module Param
     # This object returns simple header for authentication
@@ -8,7 +7,9 @@ module Uploadcare
     # @see https://uploadcare.com/docs/api_reference/rest/requests_auth/#auth-simple
     class SimpleAuthHeader
       def self.call
-        { 'Authorization': "Uploadcare.Simple #{Uploadcare.configuration.public_key}:#{Uploadcare.configuration.secret_key}" }
+        public_key = Uploadcare.configuration.public_key
+        secret_key = Uploadcare.configuration.secret_key
+        { 'Authorization': "Uploadcare.Simple #{public_key}:#{secret_key}" }
       end
     end
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # @see https://uploadcare.com/docs/api_reference/upload/signed_uploads/
 
 require 'spec_helper'

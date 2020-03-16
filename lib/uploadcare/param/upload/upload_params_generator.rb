@@ -15,7 +15,7 @@ module Uploadcare
             'UPLOADCARE_PUB_KEY' => Uploadcare.configuration.public_key,
             'UPLOADCARE_STORE' => store,
             'signature' => (Upload::SignatureGenerator.call if Uploadcare.configuration.sign_uploads)
-          }.reject{ |k, v| v.nil? }
+          }.reject { |_k, v| v.nil? }
         end
       end
     end

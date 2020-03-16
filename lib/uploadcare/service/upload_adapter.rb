@@ -6,7 +6,7 @@ module Uploadcare
   class UploadAdapter
     include Client
     extend Uploadcare::Concerns::ThrottleHandler
-    # Choose an upload method
+    # rubocop:disable Metrics/MethodLength
     def self.call(object, **options)
       if big_file?(object)
         upload_big_file(object, **options)
@@ -20,8 +20,7 @@ module Uploadcare
         raise ArgumentError, "Expected input to be a file/Array/URL, given: `#{object}`"
       end
     end
-
-    protected
+    # rubocop:enable Metrics/MethodLength
 
     def self.upload_file(file, **options)
       response = UploadClient.new.upload_many([file], **options)
@@ -53,11 +52,6 @@ module Uploadcare
 
     def self.big_file?(object)
       file?(object) && object.size >= Uploadcare.configuration.multipart_size_threshold
-    end
-
-    def self.handle_upload_errors(response)
-      error = response.success[:error]
-      raise(RequestError, error[:content]) if error
     end
 
     def self.handle_upload_errors(response)

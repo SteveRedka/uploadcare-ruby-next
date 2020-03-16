@@ -13,14 +13,12 @@ module Uploadcare
         @body = body
         @content_type = content_type
         @uri = uri
-        @date_for_header = self.timestamp
+        @date_for_header = timestamp
         {
           'Date': @date_for_header,
-          'Authorization': "Uploadcare #{Uploadcare.configuration.public_key}:#{self.signature}"
+          'Authorization': "Uploadcare #{Uploadcare.configuration.public_key}:#{signature}"
         }
       end
-
-      protected
 
       def self.signature
         content_md5 = Digest::MD5.hexdigest(@body)
