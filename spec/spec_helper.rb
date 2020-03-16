@@ -5,11 +5,8 @@ require 'api_struct'
 require 'byebug'
 require 'webmock/rspec'
 require 'uploadcare'
-require 'simplecov'
-SimpleCov.start
-
-require 'codecov'
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
+require 'coveralls'
+Coveralls.wear!
 
 Dir[File.expand_path(File.join(File.dirname(__FILE__), 'support', '**', '*.rb'))].each { |f| require f }
 
