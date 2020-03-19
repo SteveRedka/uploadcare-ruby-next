@@ -7,15 +7,17 @@ module Uploadcare
       # call given block. If ThrottleError is returned, it will wait and attempt again 4 more times
       # @yield executable block (HTTP request that may be throttled)
       def handle_throttling
-        begin
         (Uploadcare.config.max_throttle_attempts - 1).times do
-          return yield
-        rescue(Exception::ThrottleError) => error
-          wait_time = error.timeout
-          sleep(wait_time)
-          next
+          # rubocop:disable Style/RedundantBegin
+          begin
+            return yield
+          rescue(Exception::ThrottleError) => error
+            wait_time = error.timeout
+            sleep(wait_time)
+            next
+          end
+          # rubocop:enable Style/RedundantBegin
         end
-      end
         yield
       end
     end
