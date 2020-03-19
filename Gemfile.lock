@@ -104,6 +104,3 @@ DEPENDENCIES
   uploadcare-ruby!
   vcr
   webmock
-
-BUNDLED WITH
-   1.17.3
