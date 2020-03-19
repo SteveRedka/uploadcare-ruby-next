@@ -53,14 +53,15 @@ GEM
     http-form_data (2.3.0)
     http-parser (1.2.1)
       ffi-compiler (>= 1.0, < 2.0)
+    jaro_winkler (1.5.4)
     parallel (1.19.1)
     parser (2.7.0.4)
       ast (~> 2.4.0)
-    powerpack (0.1.2)
     public_suffix (4.0.3)
     rainbow (3.0.0)
     rake (13.0.1)
     retries (0.0.5)
+    rexml (3.2.4)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -74,19 +75,20 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
-    rubocop (0.55.0)
+    rubocop (0.80.1)
+      jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
-      parser (>= 2.5)
-      powerpack (~> 0.1)
+      parser (>= 2.7.0.1)
       rainbow (>= 2.2.2, < 4.0)
+      rexml
       ruby-progressbar (~> 1.7)
-      unicode-display_width (~> 1.0, >= 1.0.1)
+      unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.10.1)
     safe_yaml (1.0.5)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.6)
-    unicode-display_width (1.7.0)
+    unicode-display_width (1.6.1)
     vcr (5.1.0)
     webmock (3.8.3)
       addressable (>= 2.3.6)
@@ -100,7 +102,10 @@ DEPENDENCIES
   byebug
   rake (~> 13.0)
   rspec (~> 3.0)
-  rubocop (~> 0.55.0)
+  rubocop
   uploadcare-ruby!
   vcr
   webmock
+
+BUNDLED WITH
+   2.1.0.pre.1
