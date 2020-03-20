@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.uploadcare.com/files/e08e93a5-260d-4112-bc19-af74b548dd5f/
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/vnd.uploadcare-v0.5+json
+      User-Agent:
+      - UploadcareRuby/3.0.3-dev/ecd779dc169645ce3c91 (Ruby/2.7.0)
+      Date:
+      - Fri, 20 Mar 2020 13:26:51 GMT
+      Authorization:
+      - Uploadcare ecd779dc169645ce3c91:c30fc8a5003dc2cafc47581a33a597b04ccdbc69
+      Connection:
+      - close
+      Host:
+      - api.uploadcare.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 20 Mar 2020 13:26:52 GMT
+      Content-Type:
+      - application/vnd.uploadcare-v0.5+json
+      Content-Length:
+      - '614'
+      Connection:
+      - close
+      Server:
+      - nginx
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept
+      Allow:
+      - DELETE, GET, HEAD, OPTIONS
+      Access-Control-Allow-Origin:
+      - https://uploadcare.com
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"datetime_removed":null,"datetime_stored":null,"datetime_uploaded":"2020-03-20T13:26:17.553217Z","image_info":{"color_mode":"RGB","orientation":null,"format":"JPEG","sequence":false,"height":50,"width":50,"geo_location":null,"datetime_original":null,"dpi":[96,96]},"is_image":true,"is_ready":true,"mime_type":"application/octet-stream","original_file_url":"https://ucarecdn.com/e08e93a5-260d-4112-bc19-af74b548dd5f/kitten.jpeg","original_filename":"kitten.jpeg","size":1290,"url":"https://api.uploadcare.com/files/e08e93a5-260d-4112-bc19-af74b548dd5f/","uuid":"e08e93a5-260d-4112-bc19-af74b548dd5f","source":null}'
+    http_version: null
+  recorded_at: Fri, 20 Mar 2020 13:26:52 GMT
+recorded_with: VCR 5.1.0
