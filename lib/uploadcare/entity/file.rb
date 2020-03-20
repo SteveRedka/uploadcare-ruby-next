@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'param/conversion_path'
+
 module Uploadcare
   module Entity
     # This serializer returns a single file
@@ -75,6 +77,22 @@ module Uploadcare
       # Instance version of {external_copy}
       def remote_copy(target, **args)
         File.copy(uuid, target: target, **args)
+      end
+
+      # retuns embeddable link to the file
+      # @see https://uploadcare.com/docs/api_reference/cdn/
+      # @param params [Hash] list of operations; operations without arguments must be initialized with [true]
+      #
+      # @example basic usage
+      #   @file = Entity::File.file(<UUID>)
+      #   @file.cdn_url #=> 'https://ucarecdn.com/<UUID>/'
+      #
+      # @example with transformations
+      #   @file = Entity::File.file(<UUID>)
+      #   @file.cdn_url(flip: true, resize: '100x100') #=> 'https://ucarecdn.com/<UUID>/-/flip/-/resize/100x100/'
+      def cdn_url(**params)
+        path = Param::ConversionPath.call(**params)
+        "#{Uploadcare.config.cdn_api_root}/#{@entity.uuid}/#{path}"
       end
     end
   end

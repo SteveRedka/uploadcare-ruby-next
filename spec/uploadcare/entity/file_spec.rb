@@ -71,6 +71,24 @@ module Uploadcare
           end
         end
       end
+
+      describe 'cdn_url' do
+        before do
+          VCR.use_cassette('file_info') do
+            @file = File.info('8f64f313-e6b1-4731-96c0-6751f1e7a50a')
+          end
+        end
+
+        it 'gets a file with valid uuid' do
+          expect(@file.cdn_url).to eq('https://ucarecdn.com/8f64f313-e6b1-4731-96c0-6751f1e7a50a/')
+        end
+
+        it 'processes params' do
+          response = @file.cdn_url(dimensions: '100x100', format: 'png')
+          url = 'https://ucarecdn.com/8f64f313-e6b1-4731-96c0-6751f1e7a50a/-/dimensions/100x100/-/format/png/'
+          expect(response).to eq(url)
+        end
+      end
     end
   end
 end

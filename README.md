@@ -68,12 +68,11 @@ Using Uploadcare is simple, and here are the basics of handling files.
 
 @uc_file = Uploadcare::Uploader.upload(@file_to_upload)
 
-@uc_file.uuid
-# => "dc99200d-9bd6-4b43-bfa9-aa7bfaefca40"
-
 # URL for the file, can be used with your website or app right away
-@uc_file.cdn_url
-# => "https://ucarecdn.com/dc99200d-9bd6-4b43-bfa9-aa7bfaefca40/"
+@uc_file.cdn_url # => "https://ucarecdn.com/dc99200d-9bd6-4b43-bfa9-aa7bfaefca40/"
+
+# With transformations:
+@uc_file.cdn_url(flip: true, resize: '100x100') #=> 'https://ucarecdn.com/<UUID>/-/flip/-/resize/100x100/'
 ```
 
 Your might then want to store or delete the uploaded file. Storing files could

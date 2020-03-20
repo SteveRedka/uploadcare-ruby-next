@@ -31,6 +31,7 @@ module Uploadcare
   setting :multipart_size_threshold, 100 * 1024 * 1024
   setting :rest_api_root, 'https://api.uploadcare.com'
   setting :upload_api_root, 'https://upload.uploadcare.com'
+  setting :cdn_api_root, 'https://ucarecdn.com'
   setting :max_request_tries, 100
   setting :base_request_sleep, 1 # seconds
   setting :max_request_sleep, 60.0 # seconds
